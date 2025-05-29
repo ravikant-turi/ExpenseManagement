@@ -30,7 +30,6 @@ public class UserDaoImpl implements UserDao {
 		if (rows > 0) {
 			ResultSet rs = ps.getGeneratedKeys();
 			if (rs.next()) {
-
 				return "Added"; // Return generated user ID
 			}
 		}
@@ -57,24 +56,17 @@ public class UserDaoImpl implements UserDao {
 		Statement st = con.createStatement();
 		ResultSet rs = st.executeQuery("SELECT * FROM users");
 
-
-        List<User> users = new ArrayList<>();
-        while (rs.next()) {
-            users.add(new User(
-                rs.getInt("id"),
-                rs.getString("name"),
-                rs.getString("email"),
-                rs.getDate("created_at")
-            ));
-        }
-        return users;
-    }
-
-
-		@Override
-		public User getUserByEmail(String email) throws SQLException {
-			// TODO Auto-generated method stub
-			return null;
+		List<User> users = new ArrayList<>();
+		while (rs.next()) {
+			users.add(new User(rs.getInt("id"), rs.getString("name"), rs.getString("email"), rs.getDate("created_at")));
 		}
-		
+		return users;
 	}
+
+
+        
+
+
+	
+}
+

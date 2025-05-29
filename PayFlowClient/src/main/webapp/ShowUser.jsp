@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	
 <%@taglib prefix="f" uri="http://java.sun.com/jsf/core"%>
 <%@taglib prefix="h" uri="http://java.sun.com/jsf/html"%>
 
@@ -25,7 +24,7 @@
 
 	<h:form>
 		<div data-aos="fade-up" data-aos-duration="1000"
-			class="w-full max-w-5xl bg-white rounded-2xl shadow-2xl p-8 border border-indigo-300">
+			class = "w-full max-w-5xl bg-white rounded-2xl shadow-2xl p-8 border border-indigo-300">
 
 			<h1 class="text-4xl font-bold text-center text-indigo-800 mb-10 tracking-wider">
 				📋 User Records

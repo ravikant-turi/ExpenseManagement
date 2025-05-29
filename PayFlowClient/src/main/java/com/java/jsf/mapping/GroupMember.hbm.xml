@@ -2,23 +2,21 @@
 <!DOCTYPE hibernate-mapping PUBLIC
     "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
     "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-    
-<hibernate-mapping>
-    <class name="com.java.jsf.model.GroupMember"  table="group_members">
-       
 
-        <id name="id" column="id">
+<hibernate-mapping>
+
+    <class name="com.java.jsf.model.GroupMember" table="group_members">
+
+        <id name="id" column="id" type="int">
             <generator class="identity"/>
         </id>
-        
-       <!-- Fully-qualified class names recommended -->
+
         <many-to-one name="group" column="group_id" class="com.java.jsf.model.Group" not-null="true"/>
-        
+
         <many-to-one name="user" column="user_id" class="com.java.jsf.model.User" not-null="true"/>
 
-        <!-- Explicitly set the type for timestamp -->
-        
         <property name="joinedAt" column="joined_at" type="timestamp" />
-    
+
     </class>
+
 </hibernate-mapping>

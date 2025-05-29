@@ -1,16 +1,14 @@
 package com.java.jsf.daoImpl;
-
 import java.util.List;
-
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
-
 import com.java.jsf.dao.GroupMemberDao;
+import com.java.jsf.model.Group;
 import com.java.jsf.model.GroupMember;
-import com.java.jsf.model.User;
 import com.java.jsf.util.HibernateUtil;
+
 
 public class GroupMemberDaoImpl implements GroupMemberDao {
 
@@ -57,7 +55,7 @@ public class GroupMemberDaoImpl implements GroupMemberDao {
 	}
 
 	@Override
-	public List<User> showAllUserByGroupmemberId(int groupmem_Id) {
+	public List<com.java.jsf.model.User> showAllUserByGroupmemberId(int groupmem_Id) {
 		sessionFactory = HibernateUtil.getSessionFactory();
 		session = sessionFactory.openSession();
 		Transaction trans = session.beginTransaction();
@@ -65,7 +63,7 @@ public class GroupMemberDaoImpl implements GroupMemberDao {
 		Query query = session.createQuery("select gm.user from GroupMember gm where gm.id = :groupmem_Id");
 		query.setParameter("groupmem_Id", groupmem_Id);
 
-		List<User> userList = query.list();
+		List<com.java.jsf.model.User> userList = query.list();
 
 		trans.commit();
 		session.close();
@@ -74,21 +72,22 @@ public class GroupMemberDaoImpl implements GroupMemberDao {
 	}
 
 	@Override
-	public int showGroupsUsingByGroupmemberI(int groupmem_Id) {
-
+	public List<Group> showGroupsUsingByGroupmemberI(int groupmem_Id) {
 		sessionFactory = HibernateUtil.getSessionFactory();
-		session = sessionFactory.openSession();
-		Transaction trans = session.beginTransaction();
-
-		Query query = session.createQuery("select gm.group.id from GroupMember gm where gm.id = :groupmem_Id");
-		query.setParameter("groupmem_Id", groupmem_Id);
-
-		Integer groupId = (Integer) query.uniqueResult();
-
-		trans.commit();
-		session.close();
-
-		return groupId != null ? groupId : 0;
+//		session = sessionFactory.openSession();
+//		Transaction trans = session.beginTransaction();
+//
+//		Query query = session.createQuery("select gm.user from GroupMember gm where gm.id = :groupmem_Id");
+//		query.setParameter("groupmem_Id", groupmem_Id);
+//
+//		List<com.java.jsf.model.Group> userList = query.list();
+//
+//		trans.commit();
+//		session.close();
+//
+//		return userList;
+		
+		return null;
 	}
 
 }

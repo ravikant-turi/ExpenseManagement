@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+    
+<hibernate-mapping>
+    <class name="com.java.jsf.model.Expense" table="expenses">
+        <id name="id" column="id" type="int">
+            <generator class="identity"/>
+        </id>
+        <many-to-one name="group" class="com.java.jsf.model.Group" column="group_id" not-null="true"/>
+        <many-to-one name="paidBy" class="com.java.jsf.model.User" column="paid_by_user_id" not-null="true"/>
+        <property name="description" column="description"/>
+        <property name="totalAmount" column="total_amount"/>
+        <property name="expenseDate" column="expense_date" type="date"/>
+        <property name="createdAt" column="created_at" type="timestamp"/>
+    </class>
+</hibernate-mapping>

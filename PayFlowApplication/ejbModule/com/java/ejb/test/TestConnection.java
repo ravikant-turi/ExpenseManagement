@@ -43,34 +43,6 @@ public class TestConnection {
 			System.out.println("Error while connecting to database: " + e.getMessage());
 			e.printStackTrace();
 		}
-//<<<<<<< HEAD
-//
-//
-//		UserDao userdao = new UserDaoImpl();
-//
-//
-//		try {
-//			userdao.getAllUsers().forEach(System.out::println);
-//			;
-//		} catch (ClassNotFoundException | SQLException ex) {
-//			// TODO Auto-generated catch block
-//			ex.printStackTrace();
-//		}
-//
-// 
-//		GroupDao gpdao = new GroupDaoImpl();
-// 
-//		try {
-//			gpdao.showAllGroup().forEach(System.out::println);
-//		} catch (SQLException e) {
-// 
-//		}
-//	}
-
-
-		
-	
-//=======
 
 //		UserDao userdao = new UserDaoImpl();
 //
