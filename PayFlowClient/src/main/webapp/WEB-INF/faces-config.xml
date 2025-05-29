@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee /WEB-INF/schema/web-facesconfig_2_0.xsd"
+	version="2.0" metadata-complete="false">
+	<!-- This file must be present with our jar, even if it is empty. Otherwise, 
+		our Java annotations won't get scanned! -->
+	<managed-bean>
+		<managed-bean-name>ejbUser</managed-bean-name>
+		<managed-bean-class>com.java.ejb.model.User</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>userejbImpl</managed-bean-name>
+		<managed-bean-class>com.java.ejb.jsf.UserEjbImpl</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+
+	<managed-bean>
+		<managed-bean-name>usercontroller</managed-bean-name>
+		<managed-bean-class>com.java.controller.UserController</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+
+		<managed-property>
+			<property-name>ejbUser</property-name>
+			<property-class>com.java.ejb.model.User</property-class>
+			<value>#{ejbUser}</value>
+		</managed-property>
+
+		<managed-property>
+			<property-name>userejbImpl</property-name>
+			<property-class>com.java.ejb.jsf.UserEjbImpl</property-class>
+			<value>#{userejbImpl}</value>
+		</managed-property>
+	</managed-bean>
+
+</faces-config>
