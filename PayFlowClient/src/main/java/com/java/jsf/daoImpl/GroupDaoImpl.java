@@ -1,12 +1,10 @@
 package com.java.jsf.daoImpl;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
 
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -21,7 +19,7 @@ public class GroupDaoImpl implements GroupDao {
 	Session session;
 
 	@Override
-	public void addGroup(Group group) {
+	public String addGroup(Group group) {
 
 		sessionFactory = HibernateUtil.getSessionFactory();
 		session = sessionFactory.openSession();
@@ -33,13 +31,24 @@ public class GroupDaoImpl implements GroupDao {
 		trans.commit();
 
 		session.close();
+		
+		return null;
 
 	}
 
 	@Override
-	public List<Group> showAllGroup() throws SQLException {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Group> showAllGroup()  {
+		sessionFactory = HibernateUtil.getSessionFactory();
+	    session = sessionFactory.openSession();
+
+	    String hql = "FROM Group";
+	    Query query = session.createQuery(hql);
+	    List<Group> groupList = query.list();
+
+	    session.close();
+	    return groupList;
 	}
+
+
 
 }

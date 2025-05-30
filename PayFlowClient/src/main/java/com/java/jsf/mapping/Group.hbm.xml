@@ -11,7 +11,19 @@
 
         <property name="name" column="name"/>
         
-        <property name="createdAt" column="created_at"/>
+        <property name="createdAt" column="created_at" insert="false" update="false"/>
+        
+        
+    
+        <property name="createdBy" column="created_by" />
+        
+        <property name="noOfDays" column="no_of_days"/>
+        
+            <property name="totalAmount" column="total_amount"/>
+        
+        <property name="minimumAmount" column="minimum_amount"/>
+    
+    
         
     </class>
 </hibernate-mapping>

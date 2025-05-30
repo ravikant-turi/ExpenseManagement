@@ -76,5 +76,76 @@
 	</managed-bean>
 
 
+	<!-- Admin Model Bean -->
+	<managed-bean>
+		<managed-bean-name>admin</managed-bean-name>
+		<managed-bean-class>com.java.jsf.model.Admin</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+
+	<!-- Admindao Bean -->
+	<managed-bean>
+		<managed-bean-name>adminDao</managed-bean-name>
+		<managed-bean-class>com.java.jsf.daoImpl.AdminDaoImpl</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+
+	<!-- AdminController Bean -->
+	<managed-bean>
+		<managed-bean-name>adminController</managed-bean-name>
+		<managed-bean-class>com.java.jsf.controller.AdminController
+		</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+
+		<!-- Inject Admin model -->
+		<managed-property>
+			<property-name>admin</property-name>
+			<property-class>com.java.jsf.model.Admin</property-class>
+			<value>#{admin}</value>
+		</managed-property>
+
+		<!-- Inject Admindao -->
+		<managed-property>
+			<property-name>adminDao</property-name>
+			<property-class>com.java.jsf.daoImpl.AdminDaoImpl</property-class>
+			<value>#{adminDao}</value>
+		</managed-property>
+	</managed-bean>
+
+    <!-- Group Model Bean -->
+<managed-bean>
+    <managed-bean-name>group</managed-bean-name>
+    <managed-bean-class>com.java.jsf.model.Group</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+</managed-bean>
+
+<!-- GroupDao Bean -->
+<managed-bean>
+    <managed-bean-name>groupDao</managed-bean-name>
+    <managed-bean-class>com.java.jsf.daoImpl.GroupDaoImpl</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+</managed-bean>
+
+<!-- GroupController Bean -->
+<managed-bean>
+    <managed-bean-name>groupController</managed-bean-name>
+    <managed-bean-class>com.java.jsf.controller.GroupController</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+
+    <!-- Inject Group model -->
+    <managed-property>
+        <property-name>group</property-name>
+        <property-class>com.java.jsf.model.Group</property-class>
+        <value>#{group}</value>
+    </managed-property>
+
+    <!-- Inject GroupDao -->
+    <managed-property>
+        <property-name>groupDao</property-name>
+        <property-class>com.java.jsf.dao.GroupDao</property-class>
+        <value>#{groupDao}</value>
+    </managed-property>
+</managed-bean>
+    
 
 </faces-config>

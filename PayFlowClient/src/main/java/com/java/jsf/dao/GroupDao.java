@@ -9,8 +9,8 @@ import com.java.jsf.model.Group;
 
 public interface GroupDao {
 	
-	List<Group> showAllGroup() throws SQLException;
+	List<Group> showAllGroup() ;
 	
-	void addGroup(Group group);
+	String  addGroup(Group group);
 
 }
