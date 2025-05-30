@@ -10,6 +10,7 @@
 		<managed-bean-class>com.java.ejb.model.User</managed-bean-class>
 		<managed-bean-scope>request</managed-bean-scope>
 	</managed-bean>
+
 	<managed-bean>
 		<managed-bean-name>userejbImpl</managed-bean-name>
 		<managed-bean-class>com.java.ejb.jsf.UserEjbImpl</managed-bean-class>
@@ -18,7 +19,8 @@
 
 	<managed-bean>
 		<managed-bean-name>usercontroller</managed-bean-name>
-		<managed-bean-class>com.java.controller.UserController</managed-bean-class>
+		<managed-bean-class>com.java.controller.UserController
+		</managed-bean-class>
 		<managed-bean-scope>request</managed-bean-scope>
 
 		<managed-property>
@@ -33,5 +35,46 @@
 			<value>#{userejbImpl}</value>
 		</managed-property>
 	</managed-bean>
+
+
+
+	<!-- Login Model Bean -->
+	<managed-bean>
+		<managed-bean-name>login</managed-bean-name>
+		<managed-bean-class>com.java.jsf.model.Login</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+
+	<!-- Logindao Bean -->
+	<managed-bean>
+		<managed-bean-name>logindao</managed-bean-name>
+		<managed-bean-class>com.java.jsf.daoImpl.LogindaoImpl
+		</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+
+	<!-- LoginController Bean -->
+	<managed-bean>
+		<managed-bean-name>loginController</managed-bean-name>
+		<managed-bean-class>com.java.jsf.controller.LoginController
+		</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+
+		<!-- Inject Login -->
+		<managed-property>
+			<property-name>login</property-name>
+			<property-class>com.java.jsf.model.Login</property-class>
+			<value>#{login}</value>
+		</managed-property>
+
+		<!-- Inject Logindao -->
+		<managed-property>
+			<property-name>logindao</property-name>
+			<property-class>com.java.jsf.daoImpl.LogindaoImpl</property-class>
+			<value>#{logindao}</value>
+		</managed-property>
+	</managed-bean>
+
+
 
 </faces-config>

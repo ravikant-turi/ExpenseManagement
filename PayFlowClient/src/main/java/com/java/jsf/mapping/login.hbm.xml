@@ -9,7 +9,7 @@
     
    
 
-        <id name="username" column="name" />
+        <id name="username" column="username" />
         
         <property name="passcode" column="passcode"/>
 

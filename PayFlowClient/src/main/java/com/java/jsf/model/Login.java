@@ -22,6 +22,15 @@ public class Login {
 		this.passcode = passcode;
 	}
 
+	public Login(String username, String passcode) {
+		this.username = username;
+		this.passcode = passcode;
+	}
+
+	public Login() {
+		
+	}
+
 	
 	
 	
