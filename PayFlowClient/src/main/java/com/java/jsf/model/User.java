@@ -1,6 +1,6 @@
 package com.java.jsf.model;
 
-import java.sql.Date;
+
 
 public class User {
 	
@@ -8,7 +8,7 @@ public class User {
 
 	private String name;
 	private String email;
-	private Date createdAt;
+	private java.sql.Timestamp createdAt;
 
 	public int getId() {
 		return id;
@@ -34,15 +34,15 @@ public class User {
 		this.email = email;
 	}
 
-	public Date getCreatedAt() {
+	public java.sql.Timestamp getCreatedAt() {
 		return createdAt;
 	}
 
-	public void setCreatedAt(Date createdAt) {
+	public void setCreatedAt(java.sql.Timestamp createdAt) {
 		this.createdAt = createdAt;
 	}
 
-	public User(int id, String name, String email, Date createdAt) {
+	public User(int id, String name, String email, java.sql.Timestamp createdAt) {
 		this.id = id;
 		this.name = name;
 		this.email = email;

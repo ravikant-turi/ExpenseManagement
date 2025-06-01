@@ -47,7 +47,7 @@ public class TestMain {
         
 //		GroupTest();
 		
-		GroupMembertest();
+//		GroupMembertest();
         
     }
 	
@@ -62,15 +62,15 @@ public class TestMain {
 		gpdao.addGroup(group);
 	}
 	
-	public static void GroupMembertest() {
-		GroupMemberDao gmdao=new GroupMemberDaoImpl();
-		
-		System.out.println("group Member are : ");
-		
-		gmdao.showAllGroup().forEach(System.out::println);
-		
-		
-	}
+//	public static void GroupMembertest() {
+//		GroupMemberDao gmdao=new GroupMemberDaoImpl();
+//		
+//		System.out.println("group Member are : ");
+//		
+//		gmdao.showAllGroup().forEach(System.out::println);
+//		
+//		
+//	}
     }
 		
 	

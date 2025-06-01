@@ -8,12 +8,19 @@ import com.java.jsf.model.User;
 
 public interface GroupMemberDao {
 	
-	List<GroupMember> showAllGroup();
+//	List<GroupMember> showAllGroup();
+//
+//	String addGroupMember(GroupMember groupMember);
+//	
+//	List<User> showAllUserByGroupmemberId(int groupmem_Id);
+//	
+//	List<Group> showGroupsUsingByGroupmemberI(int groupmem_Id);
+	
+	
+	// GroupMemberDao.java
 
-	String addGroupMember(GroupMember groupMember);
+	    void addGroupMember(GroupMember member);
+	    List<GroupMember> getMembersByGroupId(int groupId);
 	
-	List<User> showAllUserByGroupmemberId(int groupmem_Id);
-	
-	List<Group> showGroupsUsingByGroupmemberI(int groupmem_Id);
 
 }

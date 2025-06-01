@@ -16,6 +16,7 @@ public class GroupMember {
     private int id;
     
     private Group group;
+    
     private User user;
     
     private java.sql.Timestamp joinedAt;

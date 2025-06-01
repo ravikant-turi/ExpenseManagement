@@ -2,10 +2,16 @@ package com.java.jsf.dao;
 
 import java.util.List;
 
-import com.java.ejb.model.User;
+import com.java.jsf.model.User;
 
 public interface UserDao {
 	
-	List<User> showAllUserH();
+//	List<User> showAllUserH();
+//	
+//	String addUser(User user);
+	
+	
+	void addUser(User user);
+    User getUserByEmail(String email);  // optional, to avoid duplicates
 
 }

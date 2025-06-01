@@ -5,7 +5,7 @@
 
 <f:view>
   <h:form>
-    <h:dataTable value="#{groupController.Grouplist()}" var="grp" border="6" >
+    <h:dataTable value="#{groupController.getGroupList()}" var="grp" border="6" >
 
       <h:column>
       <f:facet name="header">
@@ -57,5 +57,8 @@
       </h:column>
 
     </h:dataTable>
+    
+        <h:commandButton value="add Group" action="addGroup" />
+    
   </h:form>
 </f:view>

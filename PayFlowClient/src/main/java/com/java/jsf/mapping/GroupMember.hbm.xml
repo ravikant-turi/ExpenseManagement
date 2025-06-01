@@ -15,7 +15,7 @@
 
         <many-to-one name="user" column="user_id" class="com.java.jsf.model.User" not-null="true"/>
 
-        <property name="joinedAt" column="joined_at" type="timestamp" />
+        <property name="joinedAt" column="joined_at" type="timestamp" insert="false" update="false"/>
 
     </class>
 
