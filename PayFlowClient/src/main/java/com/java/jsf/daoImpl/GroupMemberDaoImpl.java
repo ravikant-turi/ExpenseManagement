@@ -1,4 +1,5 @@
 package com.java.jsf.daoImpl;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.hibernate.Query;
@@ -7,7 +8,9 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 
 import com.java.jsf.dao.GroupMemberDao;
+import com.java.jsf.dao.UserDao;
 import com.java.jsf.model.GroupMember;
+import com.java.jsf.model.User;
 import com.java.jsf.util.HibernateUtil;
 
 
@@ -15,7 +18,10 @@ public class GroupMemberDaoImpl implements GroupMemberDao {
 
 	SessionFactory sessionFactory;;
 
-	Session session ;;
+	Session session ;
+	
+	
+	
 
 //	@Override
 //	public List<GroupMember> showAllGroup() {
@@ -107,7 +113,29 @@ public class GroupMemberDaoImpl implements GroupMemberDao {
 	        session.close();
 	        return list;
 	    }
+
+		@Override
+		public List<User> getUsersByGroupId(int groupId) {
+			
+			    List<User> userList = new ArrayList<User>();
+			    SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
+			    Session session = sessionFactory.openSession();
+			    Transaction tx = session.beginTransaction();
+
+			    Query query = session.createQuery(
+			        "SELECT u FROM User u, GroupMember gm WHERE u.id = gm.user.id AND gm.group.id = :groupId"
+			    );
+			    query.setParameter("groupId", groupId);
+
+			    userList = query.list();
+
+			    tx.commit();
+			    session.close();
+
+			    return userList;
+			}
+
+		}
 		
 		
 
-}

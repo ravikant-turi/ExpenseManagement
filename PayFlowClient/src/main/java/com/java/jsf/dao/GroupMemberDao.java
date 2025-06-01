@@ -21,6 +21,8 @@ public interface GroupMemberDao {
 
 	    void addGroupMember(GroupMember member);
 	    List<GroupMember> getMembersByGroupId(int groupId);
+	    
+	    List<User> getUsersByGroupId(int groupId);
 	
 
 }

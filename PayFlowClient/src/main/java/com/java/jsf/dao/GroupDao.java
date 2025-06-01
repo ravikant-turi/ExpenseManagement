@@ -17,5 +17,10 @@ public interface GroupDao {
 	String addGroup(Group group);
     List<Group> showAllGroup();
     Group getGroupById(int id);
+    
+    
+//    Group getGroupById(int id);
+//    List<Group> getAllGroups();
+//    void addGroup(Group group);
 
 }

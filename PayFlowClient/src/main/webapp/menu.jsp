@@ -56,7 +56,11 @@
 
         <!-- Make a Trip button (redirects to addgroup.jsp) -->
         <h:form>
-            <h:commandButton value="Make a Trip" action="addGroup" styleClass="trip-button"/>
+            <h:commandButton value="Make a Trip" action="addGroupWithFriends" styleClass="trip-button"/>
+        </h:form>
+        
+        <h:form>
+            <h:commandButton value="Make a Trip" action="exploreTrip" styleClass="trip-button"/>
         </h:form>
     </div>
 </body>

@@ -5,7 +5,7 @@
 
 <f:view>
   <h:form>
-    <h:dataTable value="#{groupController.getGroupList()}" var="grp" border="6" >
+    <h:dataTable value="#{groupController.getallGroups()}" var="grp" border="6" >
 
       <h:column>
       <f:facet name="header">

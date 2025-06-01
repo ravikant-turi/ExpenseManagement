@@ -209,7 +209,8 @@
 	<!-- UserDao -->
 	<managed-bean>
 		<managed-bean-name>userDao</managed-bean-name>
-		<managed-bean-class>com.java.jsf.daoImpl.UseDaoImpl</managed-bean-class>
+		<managed-bean-class>com.java.jsf.daoImpl.UseDaoImpl
+		</managed-bean-class>
 		<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
 
@@ -267,6 +268,166 @@
 			<to-view-id>/showGroup.jsp</to-view-id>
 		</navigation-case>
 	</navigation-rule>
+
+
+
+
+
+
+
+	<!-- ExpenseDao -->
+	<managed-bean>
+		<managed-bean-name>expenseDao</managed-bean-name>
+		<managed-bean-class>com.java.jsf.daoImpl.ExpenseDaoImpl
+		</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+
+	<managed-bean>
+		<managed-bean-name>expense</managed-bean-name>
+		<managed-bean-class>com.java.jsf.model.Expense
+		</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+
+	<!-- GroupDao -->
+	<managed-bean>
+		<managed-bean-name>groupDao</managed-bean-name>
+		<managed-bean-class>com.java.jsf.daoImpl.GroupDaoImpl
+		</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+
+	<!-- UserDao -->
+	<managed-bean>
+		<managed-bean-name>userDao</managed-bean-name>
+		<managed-bean-class>com.java.jsf.daoImpl.UseDaoImpl
+		</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+
+
+
+	<!-- UserDao -->
+
+	<managed-bean>
+		<managed-bean-name>userDao</managed-bean-name>
+		<managed-bean-class>com.java.jsf.daoImpl.UseDaoImpl
+		</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+
+	<!-- UserDao -->
+	<managed-bean>
+		<managed-bean-name>userDao</managed-bean-name>
+		<managed-bean-class>com.java.jsf.daoImpl.UseDaoImpl
+		</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<!-- Expense model managed bean -->
+	<!-- ExpenseDao Managed Bean -->
+	<managed-bean>
+		<managed-bean-name>expenseDao</managed-bean-name>
+		<managed-bean-class> com.java.jsf.daoImpl.ExpenseDaoImpl
+		</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+
+	<!-- GroupDao Managed Bean -->
+	<managed-bean>
+		<managed-bean-name>groupDao</managed-bean-name>
+		<managed-bean-class>com.java.jsf.daoImpl.GroupDaoImpl
+		</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+
+	<!-- UserDao Managed Bean -->
+	<managed-bean>
+		<managed-bean-name>userDao</managed-bean-name>
+		<managed-bean-class>com.java.jsf.daoImpl.UseDaoImpl
+		</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+
+
+
+
+
+
+
+	<!-- Navigation rule example -->
+	<navigation-rule>
+		<from-view-id>/addExpense.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>showExpenses</from-outcome>
+			<to-view-id>/showExpenses.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+
+
+	<!-- ExpenseController -->
+	<managed-bean>
+		<managed-bean-name>expenseController</managed-bean-name>
+		<managed-bean-class>com.java.jsf.controller.ExpenseController
+		</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+
+		<managed-property>
+			<property-name>expense</property-name>
+			<property-class>com.java.jsf.model.Expense</property-class>
+			<value>#{expense}</value>
+		</managed-property>
+
+		
+
+		<managed-property>
+			<property-name>user</property-name>
+			<property-class>com.java.jsf.model.User</property-class>
+			<value>#{user}</value>
+		</managed-property>
+
+		<managed-property>
+			<property-name>expenseDao</property-name>
+			<property-class>com.java.jsf.dao.ExpenseDao</property-class>
+			<value>#{expenseDao}</value>
+		</managed-property>
+
+		<managed-property>
+			<property-name>groupDao</property-name>
+			<property-class>com.java.jsf.dao.GroupDao</property-class>
+			<value>#{groupDao}</value>
+		</managed-property>
+
+		<managed-property>
+			<property-name>userDao</property-name>
+			<property-class>com.java.jsf.dao.UserDao</property-class>
+			<value>#{userDao}</value>
+		</managed-property>
+
+		<managed-property>
+			<property-name>groupMemberDao</property-name>
+			<property-class>com.java.jsf.dao.GroupMemberDao</property-class>
+			<value>#{groupMemberDao}</value>
+		</managed-property>
+	</managed-bean>
+
 
 
 

@@ -17,25 +17,25 @@ public class UseDaoImpl implements UserDao {
 	SessionFactory sessionFactory;
 	Session session;
 
-//	@Override
-//	public List<User> showAllUserH() {
-//
-//		sessionFactory = HibernateUtil.getSessionFactory();
-//
-//		session = sessionFactory.openSession();
-//
-//		Transaction tans = session.beginTransaction();
-//
-//		Query query = session.createQuery("from users");
-//
-//		List<User> userList = query.list();
-//
-//		tans.commit();
-//		session.close();
-//
-//		return userList;
-//
-//	}
+	@Override
+	public List<User> showAllUserH() {
+
+		sessionFactory = HibernateUtil.getSessionFactory();
+
+		session = sessionFactory.openSession();
+
+		Transaction tans = session.beginTransaction();
+
+        Query query = session.createQuery("from User");
+
+		List<User> userList = query.list();
+
+		tans.commit();
+		session.close();
+
+		return userList;
+
+	}
 
 //	@Override
 //	public String addUser(com.java.jsf.model.User user) {
@@ -70,5 +70,26 @@ public class UseDaoImpl implements UserDao {
         session.close();
         return user;
     }
+    
+    @Override
+    public User getUserById(int id) {
+        Session session = sessionFactory.openSession();
+        User user = (User) session.get(User.class, id);
+        session.close();
+        return user;
+    }
+
+    @Override
+    public List<User> getAllUsers() {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        Transaction trans=session.beginTransaction();
+        Query query = session.createQuery("from User");
+        List<User> users = query.list();
+        session.close();
+        trans.commit();
+        return users;
+    }
+
+    
 
 }
